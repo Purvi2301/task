@@ -38,14 +38,14 @@ import java.util.stream.Collectors;
 public class ElasticSearchService {
 
     private static final String DOCUMENT_INDEX = "employeeindex";
-    @Autowired
-    private ElasticSearchRepository repository;
+    private final ElasticSearchRepository repository;
     private final ElasticsearchOperations elasticsearchOperations;
     private final ElasticsearchClient elasticsearchClient;
 
-    public ElasticSearchService(ElasticsearchOperations elasticsearchOperations, ElasticsearchClient elasticsearchClient) {
+    public ElasticSearchService(ElasticsearchOperations elasticsearchOperations, ElasticsearchClient elasticsearchClient, ElasticSearchRepository repository) {
         this.elasticsearchOperations = elasticsearchOperations;
         this.elasticsearchClient = elasticsearchClient;
+        this.repository = repository;
     }
 
 
