@@ -35,5 +35,8 @@ private String host;
     @Bean
     public ElasticsearchClient getElasticsearchClient() {
         return new ElasticsearchClient(getElasticsearchTransport());
+
+
+
     }
 }
